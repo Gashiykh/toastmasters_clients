@@ -1,0 +1,38 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: toastmasters_app
+    environment:
+      DJANGO_SETTINGS_MODULE: "core.settings"
+      POSTGRES_DB: "toastmasters_db"
+      POSTGRES_USER: "toastmasters_user"
+      POSTGRES_PASSWORD: "toastmasters_pass"
+      POSTGRES_HOST: "postgres_toast"
+      POSTGRES_PORT: "5432"
+    volumes:
+      - .:/app
+    working_dir: /app
+    ports:
+      - "8001:8001"
+    depends_on:
+      - postgres_toast
+    restart: on-failure
+
+  postgres_toast:
+    image: postgres:15
+    container_name: postgres_toast
+    restart: always
+    environment:
+      POSTGRES_DB: toastmasters_db
+      POSTGRES_USER: toastmasters_user
+      POSTGRES_PASSWORD: toastmasters_pass
+    ports:
+      - "5435:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
+
