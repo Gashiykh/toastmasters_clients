@@ -10,7 +10,7 @@ class VisitType(TextChoices):
 class Contact(models.Model):
     name = models.CharField("Имя", max_length=100)
     phone = models.CharField("Телефон", max_length=20)
-    visit_form = models.CharField(max_length=50, choices=VisitType.choices, verbose_name="Формат посещения")
+    visit_form = models.CharField(max_length=50, choices=VisitType.choices, default=VisitType.ONLINE, verbose_name="Формат посещения")
     is_toastmasters  = models.BooleanField(default=False)
     club = models.CharField(max_length=200, null=True, blank=True, verbose_name="Название клуба")
 
