@@ -158,3 +158,8 @@ CORS_ALLOW_HEADERS = [
     'x-requested-with',
     'cookie'
 ]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://tm.nomadera.kz",
+    "https://www.tm.nomadera.kz",
+]
