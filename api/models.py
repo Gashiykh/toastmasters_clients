@@ -1,8 +1,19 @@
 from django.db import models
+from django.db.models import TextChoices
+
+
+class VisitType(TextChoices):
+    ONLINE = 'online', 'Online'
+    OFFLINE = 'offline', 'Offline'
+
 
 class Contact(models.Model):
     name = models.CharField("Имя", max_length=100)
     phone = models.CharField("Телефон", max_length=20)
+    visit_form = models.CharField(max_length=50, choices=VisitType.choices, verbose_name="Формат посещения")
+    is_toastmasters  = models.BooleanField(default=False)
+    club = models.CharField(max_length=200, null=True, blank=True, verbose_name="Название клуба")
+
     created_at = models.DateTimeField("дата создания", auto_now_add=True)
 
     def __str__(self):
