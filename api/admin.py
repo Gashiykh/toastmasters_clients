@@ -15,7 +15,7 @@ TOKEN    = os.getenv('GREEN_API_TOKEN')
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin):
     model = Contact
-    list_display = ('name', 'phone', 'created_at')
+    list_display = ('name', 'phone', 'visit_form', 'club', 'created_at')
     list_filter = ('created_at',)
     search_fields = ('name', 'phone')
 
