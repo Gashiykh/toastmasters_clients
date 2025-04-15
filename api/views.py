@@ -14,14 +14,13 @@ class ContactAddView(views.APIView):
         serializer = ContactModelSerializer(data=request.data)
         if serializer.is_valid():
             instance = serializer.save()
-
+            print(1111)
             phone = instance.phone.replace("+", "").replace(" ", "").strip()
             chat_id = f"{phone}@c.us"
             url = f"https://api.green-api.com/waInstance{INSTANCE}/sendMessage/{TOKEN}"
             payload = {
                 "chatId": chat_id,
-                "message": f"""
-Welcome to "Nomads of the Digital Era"! 🌍🚀
+                "message": f"""Welcome to "Nomads of the Digital Era"! 🌍🚀
 
 Dear {instance.name},
 
@@ -32,15 +31,17 @@ We can't wait to see you there!
 April 26th 2025,
 KIMEP Univesity, New building, Abay st. 2 
 Almaty, Kazakhstan
-https://2gis.kz/almaty/geo/70000001022118196/76.956101,43.241517
 
 Best regards,
 The Nomads of the Digital Era Team
                     """
             }
+            print(222)
 
             try:
                 response = requests.post(url, json=payload, timeout=10)
+                print(response)
+                print(response.text)
                 response.raise_for_status()
             except requests.RequestException as e:
                 print(f"[Green API] Ошибка отправки: {e}")
