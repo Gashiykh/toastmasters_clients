@@ -28,7 +28,7 @@ Thank you for registering for the "Nomads of the Digital Era" conference! We're 
 
 We can't wait to see you there!
 
-April 26th 2025,
+April 26th 2025, 9:00
 KIMEP Univesity, New building, Abay st. 2 
 Almaty, Kazakhstan
 
