@@ -90,7 +90,7 @@ DATABASES = {
         'USER': "toastmasters_user",
         'PASSWORD': "toastmasters_pass",
         'HOST': "postgres_toast",
-        'PORT': "5435",
+        'PORT': "5432",
     }
 }
 
