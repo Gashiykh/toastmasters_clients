@@ -29,7 +29,7 @@ services:
       POSTGRES_USER: toastmasters_user
       POSTGRES_PASSWORD: toastmasters_pass
     ports:
-      - "5435:5432"
+      - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
