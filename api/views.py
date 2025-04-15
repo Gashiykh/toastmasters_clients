@@ -20,7 +20,23 @@ class ContactAddView(views.APIView):
             url = f"https://api.green-api.com/waInstance{INSTANCE}/sendMessage/{TOKEN}"
             payload = {
                 "chatId": chat_id,
-                "message": f"Здравствуйте, {instance.name}! Ваши данные успешно сохранены."
+                "message": f"""
+Welcome to "Nomads of the Digital Era"! 🌍🚀
+
+Dear {instance.name},
+
+Thank you for registering for the "Nomads of the Digital Era" conference! We're excited to have you join us for inspiring talks, engaging workshops, and valuable networking with global digital pioneers. Stay tuned for more details as we approach the event date. 
+
+We can't wait to see you there!
+
+April 26th 2025,
+KIMEP Univesity, New building, Abay st. 2 
+Almaty, Kazakhstan
+https://2gis.kz/almaty/geo/70000001022118196/76.956101,43.241517
+
+Best regards,
+The Nomads of the Digital Era Team
+                    """
             }
 
             try:
