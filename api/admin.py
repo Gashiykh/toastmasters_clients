@@ -16,9 +16,8 @@ TOKEN = os.getenv('GREEN_API_TOKEN')
 class ContactAdmin(admin.ModelAdmin):
     model = Contact
     list_display = ('name', 'phone', 'visit_form', 'club', 'created_at')
-    list_filter = ('created_at',)
+    list_filter = ('created_at', 'visit_form',)
     search_fields = ('name', 'phone')
-    list_filter = ('visit_form',)
 
 
     def save_model(self, request, obj, form, change):
