@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 INSTANCE = os.getenv('GREEN_API_INSTANCE_ID')
-TOKEN    = os.getenv('GREEN_API_TOKEN')
+TOKEN = os.getenv('GREEN_API_TOKEN')
 
 # Register your models here.
 @admin.register(Contact)
@@ -18,6 +18,7 @@ class ContactAdmin(admin.ModelAdmin):
     list_display = ('name', 'phone', 'visit_form', 'club', 'created_at')
     list_filter = ('created_at',)
     search_fields = ('name', 'phone')
+    list_filter = ('visit_form',)
 
 
     def save_model(self, request, obj, form, change):
