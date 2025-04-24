@@ -1,5 +1,4 @@
 import os, requests
-from asyncio import timeout
 
 INSTANCE = os.getenv("GREEN_API_INSTANCE_ID")
 TOKEN    = os.getenv("GREEN_API_TOKEN")
