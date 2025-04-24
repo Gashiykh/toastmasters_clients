@@ -4,7 +4,9 @@ import requests
 from rest_framework import views, status
 from rest_framework.response import Response
 
-from .serializers import ContactModelSerializer
+from .models import Contact
+from .serializers import ContactModelSerializer, BroadcastSerializer
+from .utils import normalize_phone, send_whatsapp
 
 INSTANCE = os.getenv('GREEN_API_INSTANCE_ID')
 TOKEN = os.getenv('GREEN_API_TOKEN')
@@ -48,3 +50,32 @@ The Nomads of the Digital Era Team
 
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class BroadcastView(views.APIView):
+
+    def post(self, request, *args, **kwargs):
+        serializer = BroadcastSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+
+        template = serializer.validated_data["message"]
+
+        contacts = Contact.objects.all().iterator()
+        sent, failed = 0, 0
+
+        for contact in contacts:
+            msg = template.format(name=contact.name)
+            chat_id = normalize_phone(contact.phone)
+
+            try:
+                send_whatsapp(chat_id, msg)
+                sent += 1
+            except Exception as exc:
+                failed += 1
+
+                print(f"Error sending message to {contact.name} (ID: {contact.id}) with phone {contact.phone}: {exc}")
+
+        return Response(
+            {"sent": sent, "failed": failed},
+            status=status.HTTP_200_OK,
+        )
