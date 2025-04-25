@@ -34,19 +34,13 @@ class BroadcastSerializer(serializers.Serializer):
             data['message'] = DEFAULT_TEMPLATE
         return data
 
-DEFAULT_TEMPLATE = """Dear {name},
-Only 2 days to go until *Nomads of the Digital Era: Speak, Lead, Innovate* —
-the very first international Toastmasters conference in Kazakhstan! 🇰🇿✨
-
-📌 *Event Details*
+DEFAULT_TEMPLATE = """Dear [Name],
+The countdown is almost over — just 1 day left until Nomads of the Digital Era: Speak, Lead, Innovate! 🎉
+We’re thrilled to invite you to the first international Toastmasters conference ever held in Kazakhstan — a celebration of voice, vision, and transformation.
+📌 When & Where:
 • Date: April 26, 2025
-• Format: In-person Conference
 • Location: KIMEP University, Almaty
-
-We can’t wait to welcome you to a day full of powerful speeches, leadership insights, and meaningful connections. 💬🤝
-
-✨ Tomorrow we’ll share the full agenda and practical info.
-🔗 The conference link will be sent on the event day.
-
-Get ready to be inspired!
+🎤 Today, you’ll receive the full schedule and speaker lineup.
+📬 And tomorrow morning, we’ll send you the final access link.
+Get ready to connect, grow, and be part of something unforgettable! 💡🌍
 """
