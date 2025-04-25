@@ -34,7 +34,7 @@ class BroadcastSerializer(serializers.Serializer):
             data['message'] = DEFAULT_TEMPLATE
         return data
 
-DEFAULT_TEMPLATE = """Dear [Name],
+DEFAULT_TEMPLATE = """Dear {name},
 The countdown is almost over — just 1 day left until Nomads of the Digital Era: Speak, Lead, Innovate! 🎉
 We’re thrilled to invite you to the first international Toastmasters conference ever held in Kazakhstan — a celebration of voice, vision, and transformation.
 📌 When & Where:
