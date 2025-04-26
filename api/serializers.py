@@ -34,20 +34,15 @@ class BroadcastSerializer(serializers.Serializer):
             data['message'] = DEFAULT_TEMPLATE
         return data
 
-DEFAULT_TEMPLATE = """Dear {name},
-🎉 Today’s the day! 🎉
-Welcome to Nomads of the Digital Era: Speak, Lead, Innovate — the first-ever international Toastmasters conference in Kazakhstan!
+DEFAULT_TEMPLATE = """
+Here are the links to online livestream of our speakers:
 
-📍 Location: KIMEP University, Almaty
-📅 Date: April 26, 2025
-⏰ 9:00
-Whether you're here to learn, to lead, or to be inspired — this is your moment.
+🎤 Speaker: Sabina Lonjon (Mars Wrigley)
+📝 Topic: "The truth behind FMCG marketing: lessons I've learned along the way" (Session in English)
+🔗 Link: https://meet.google.com/ovk-zofq-pcx
 
-Here is Today's Agenda:
-https://shorturl.at/lbP28
 
-🔗 Here’s the conference link: 
-https://shorturl.at/cxPVA
-
-Let’s make history together! 🚀🎙
+🎤 Speaker: Indira Kyilybaeva (Glovo, Finmentor)
+📝 Topic: "From Speaking to Doing" (English)
+🔗 Link: https://shorturl.at/cxPVA
 """
