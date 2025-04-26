@@ -35,14 +35,28 @@ class BroadcastSerializer(serializers.Serializer):
         return data
 
 DEFAULT_TEMPLATE = """
-Here are the links to online livestream of our speakers:
+Links for joining online livestreams of next speaker sessions:
 
-🎤 Speaker: Sabina Lonjon (Mars Wrigley)
-📝 Topic: "The truth behind FMCG marketing: lessons I've learned along the way" (Session in English)
-🔗 Link: https://meet.google.com/ovk-zofq-pcx
+Hall #1:
+Panel Discussion: "ИИ заменит нас: правда или ложь" (Russian)
+1) Zhuldyz Saulebekova (Almaty Air Initiative)
+2) Arman Shokparov (People Consulting Ltd.)
+3) Mark Inger (Pleep)
+4) Nik McFly (Hybrain.ai n Ailand)
+5) Daniyar Abenov (Postureletics)
+Link: https://shorturl.at/cxPVA
 
+Hall #2
+Nuraly Begaliev (Teknolab), "Бірінші кадамнын куші" (Kazakh)
+Eskendir Bestai (Ustart.kz) "МарапаПЕН жазалау" (Kazakh)
+Link: https://meet.google.com/ovk-zofq-pcx
 
-🎤 Speaker: Indira Kyilybaeva (Glovo, Finmentor)
-📝 Topic: "From Speaking to Doing" (English)
-🔗 Link: https://shorturl.at/cxPVA
+Hall #3
+Nataliya Inkina (Almaty International Women Club),
+"Актерские практики для выразительной речи" (Russian)
+Link: https://meet.google.com/tge-yqan-vsd
+
+Hall #4
+Regina Andreyeva (Pincode), "Выбирай себя: карьерный мастер класс" (Russian)
+Link: https://meet.google.com/fyd-uwbq-qcs
 """
