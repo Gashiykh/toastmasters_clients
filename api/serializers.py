@@ -35,12 +35,19 @@ class BroadcastSerializer(serializers.Serializer):
         return data
 
 DEFAULT_TEMPLATE = """Dear {name},
-The countdown is almost over — just 1 day left until Nomads of the Digital Era: Speak, Lead, Innovate! 🎉
-We’re thrilled to invite you to the first international Toastmasters conference ever held in Kazakhstan — a celebration of voice, vision, and transformation.
-📌 When & Where:
-• Date: April 26, 2025
-• Location: KIMEP University, Almaty
-🎤 Today, you’ll receive the full schedule and speaker lineup.
-📬 And tomorrow morning, we’ll send you the final access link.
-Get ready to connect, grow, and be part of something unforgettable! 💡🌍
+🎉 Today’s the day! 🎉
+Welcome to Nomads of the Digital Era: Speak, Lead, Innovate — the first-ever international Toastmasters conference in Kazakhstan!
+
+📍 Location: KIMEP University, Almaty
+📅 Date: April 26, 2025
+⏰ 9:00
+Whether you're here to learn, to lead, or to be inspired — this is your moment.
+
+Here is Today's Agenda:
+https://shorturl.at/lbP28
+
+🔗 Here’s the conference link: 
+https://shorturl.at/cxPVA
+
+Let’s make history together! 🚀🎙
 """
